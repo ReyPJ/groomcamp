@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+import ComingTimer from "@/components/comingTimer.svelte";
+---
+
+<main class="flex items-center justify-center w-screen h-screen relative p-4">
+  <picture>
+    <source type="image/webp" srcset="/images/comingsoon.webp" />
+    <Image
+      src="/images/comingsoon.webp"
+      alt="Groom Camp with a tend in the middle of the trees, is the comming soon page background for grooming camp, an international camp and grooming competition"
+      class="w-screen h-screen object-cover absolute top-0 left-0 z-[-99]"
+      width={1920}
+      height={1080}
+      loading={"eager"}
+    />
+  </picture>
+  <div
+    id="main"
+    class="bg-white/80 w-full max-w-4xl max-h-full overflow-y-auto p-4 md:p-8 rounded-lg shadow-lg z-10 text-center flex flex-col gap-2"
+  >
+    <div class="flex-grow flex flex-col justify-center">
+      <h1
+        class="text-black text-4xl sm:text-5xl md:text-6xl lg:text-8xl uppercase font-extrabold"
+      >
+        Groom Camp
+      </h1>
+      <div class="my-2 md:my-4 flex flex-col">
+        <p class="text-black text-base sm:text-lg md:text-xl pb-4">
+          <span class="text-xl sm:text-2xl md:text-3xl"
+            >¡Prepárate para descubrir un universo de <br />experiencias
+            transformadoras en el mundo del grooming!</span
+          ><br /> <span class="font-Big">Tras el éxito de nuestro primer evento; esta plataforma se convertirá
+          en el centro para la organización y gestión de futuras ediciones internacionales,
+          donde pronto podrás acceder a boletos para vivir momentos inolvidables.</span>
+        </p>
+        <div class="w-full flex flex-col gap-2 overflow-x-auto">
+          <h2
+            class="text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase font-extrabold"
+          >
+            Cuenta regresiva
+          </h2>
+          <ComingTimer client:load />
+        </div>
+      </div>
+      <div
+        class="bg-black w-full h-fit rounded-lg flex items-center justify-center py-2 mt-2"
+      >
+        <Image
+          src="/images/LOGO.webp"
+          alt="Groom Camp Logo"
+          class="object-contain p-2 max-h-16 md:max-h-none"
+          width={200}
+          height={100}
+          loading={"eager"}
+        />
+      </div>
+    </div>
+  </div>
+</main>
