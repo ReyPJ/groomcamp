@@ -1,8 +1,8 @@
 <script lang="ts">
   import { onMount, onDestroy } from "svelte";
 
-  const targetDate = new Date();
-  targetDate.setDate(targetDate.getDate() + 14);
+  // Fixed target date so that the countdown is global and remains consistent.
+  const targetDate = new Date("2025-03-22T00:00:00Z");
 
   let days = 0;
   let hours = 0;
