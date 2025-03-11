@@ -8,6 +8,7 @@
         "@astrojs/vercel": "^8.1.1",
         "@tailwindcss/vite": "^4.0.12",
         "astro": "^5.4.2",
+        "flag-icons": "^7.3.2",
         "svelte": "^5.22.6",
         "tailwindcss": "^4.0.12",
         "typescript": "^5.8.2",
@@ -424,6 +425,8 @@
     "find-up-simple": ["find-up-simple@1.0.1", "", {}, "sha512-afd4O7zpqHeRyg4PfDQsXmlDe2PfdHtJt6Akt8jOWaApLOZk5JXs6VMR29lz03pRe9mpykrRCYIYxaJYcfpncQ=="],
 
     "find-yarn-workspace-root2": ["find-yarn-workspace-root2@1.2.16", "", { "dependencies": { "micromatch": "^4.0.2", "pkg-dir": "^4.2.0" } }, "sha512-hr6hb1w8ePMpPVUK39S4RlwJzi+xPLuVuG8XlwXU3KD5Yn3qgBWVfy3AzNlDhWvE1EORCE65/Qm26rFQt3VLVA=="],
+
+    "flag-icons": ["flag-icons@7.3.2", "", {}, "sha512-QkaZ6Zvai8LIjx+UNAHUJ5Dhz9OLZpBDwCRWxF6YErxIcR16jTkIFm3bFu54EkvKQy4+wicW+Gm7/0631wVQyQ=="],
 
     "flattie": ["flattie@1.1.1", "", {}, "sha512-9UbaD6XdAL97+k/n+N7JwX46K/M6Zc6KcFYskrYL8wbBV/Uyk0CTAMY0VT+qiK5PM7AIc9aTWYtq65U7T+aCNQ=="],
 
