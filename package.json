@@ -12,6 +12,7 @@
     "@astrojs/svelte": "^7.0.5",
     "@astrojs/vercel": "^8.1.1",
     "@tailwindcss/vite": "^4.0.12",
+    "@vercel/speed-insights": "^1.2.0",
     "astro": "^5.4.2",
     "svelte": "^5.22.6",
     "tailwindcss": "^4.0.12",
