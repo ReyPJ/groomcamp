@@ -1,0 +1,37 @@
+---
+import { Image } from "astro:assets";
+---
+
+<div class="w-full h-[600px]">
+  <div class="grid grid-cols-5 grid-rows-5 gap-2 h-full">
+    <div
+      class="col-span-4 bg-primery-black text-white row-span-4 flex items-center justify-center text-4xl"
+    >
+      <picture class="w-full h-full flex items-center justify-center">
+        <Image
+          src="/images/bentoback1.webp"
+          alt="Kids holding their hands up on a camping day"
+          width={1920}
+          height={1080}
+          loading={"eager"}
+          class="max-h-full max-w-full object-cover object-bottom"
+        />
+      </picture>
+    </div>
+    <div
+      class="row-span-3 col-start-5 bg-red-500 flex items-center justify-center text-4xl"
+    >
+      2
+    </div>
+    <div
+      class="row-span-2 col-start-5 row-start-4 bg-green-500 flex items-center justify-center text-4xl"
+    >
+      3
+    </div>
+    <div
+      class="col-span-4 row-start-5 bg-yellow-500 flex items-center justify-center text-4xl"
+    >
+      4
+    </div>
+  </div>
+</div>

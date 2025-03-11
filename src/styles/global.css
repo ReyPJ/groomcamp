@@ -3,11 +3,11 @@
 
 @import "tailwindcss";
 
-
 @theme {
     --font-teko: "Teko", sans-serif;
     --font-Bebas: "Bebas Neue", sans-serif;
     --font-Big: "Big Shoulders Display", sans-serif;
+    --color-primery-black: #050505;
 }
 
 @font-face {
