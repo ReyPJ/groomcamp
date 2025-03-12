@@ -1,12 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap");
 
 @import "tailwindcss";
+@plugin "daisyui";
 
 @theme {
   --font-teko: "Teko", sans-serif;
   --font-Bebas: "Bebas Neue", sans-serif;
   --font-Big: "Big Shoulders Display", sans-serif;
+  --font-Os: "Oswald", sans-serif;
   --color-primary-black: #050505;
   --color-primery-yellow: #ef7b21;
 }

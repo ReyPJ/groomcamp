@@ -1,0 +1,306 @@
+---
+import Check from "@/icons/check.astro";
+---
+
+<section id="boletos" class="relative bg-white overflow-hidden py-20 font-Os">
+  <!-- Elementos decorativos de fondo -->
+  <div
+    class="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-black to-transparent opacity-10"
+  >
+  </div>
+  <div
+    class="absolute -top-12 left-1/4 transform -translate-x-1/2 w-64 h-64 bg-primery-yellow opacity-5 rounded-full blur-3xl"
+  >
+  </div>
+  <div
+    class="absolute -bottom-20 right-1/4 transform translate-x-1/2 w-80 h-80 bg-primery-yellow opacity-5 rounded-full blur-3xl"
+  >
+  </div>
+
+  <div class="container mx-auto px-4 sm:px-6 py-16 relative z-10">
+    <!-- Encabezado de sección con diseño mejorado -->
+    <div class="text-center mb-16">
+      <span
+        class="font-Bebas text-lg text-primery-yellow bg-black py-1 px-4 rounded-full inline-block mb-4 transform -rotate-1 shadow-md"
+        >ELIGE TU PLAN</span
+      >
+      <h2
+        class="font-Bebas text-5xl md:text-6xl lg:text-7xl text-black mb-4 tracking-wider relative inline-block"
+      >
+        BOLETOS
+        <div
+          class="absolute -z-10 -bottom-2 left-0 w-full h-3 bg-primery-yellow opacity-30 transform -rotate-0.5"
+        >
+        </div>
+      </h2>
+      <div
+        class="w-32 h-1.5 bg-gradient-to-r from-primery-yellow to-yellow-500 mx-auto mb-8"
+      >
+      </div>
+      <p class="text-lg text-zinc-700 max-w-3xl mx-auto leading-relaxed">
+        Elige la opción de pago que mejor se adapte a tus necesidades
+        financieras. Todas las opciones incluyen exactamente los mismos
+        beneficios y experiencias.
+      </p>
+    </div>
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto"
+    >
+      <!-- Tier 1: Pago completo -->
+      <div
+        class="bg-gradient-to-br from-zinc-900 to-black rounded-xl shadow-xl overflow-hidden flex flex-col transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group"
+      >
+        <div
+          class="p-6 border-b border-zinc-700 bg-gradient-to-r from-zinc-900 to-black"
+        >
+          <h2 class="font-Bebas text-4xl text-white text-center">
+            Pago Completo
+          </h2>
+          <p class="text-center text-primery-yellow text-3xl mt-3 font-bold">
+            $500 USD
+          </p>
+          <p class="text-center text-gray-400 text-sm mt-1">
+            Sin pagos adicionales
+          </p>
+        </div>
+
+        <div class="p-6 sm:p-8 bg-zinc-800 flex-grow flex flex-col text-white">
+          <div class="mb-6 text-center">
+            <span
+              class="bg-primery-yellow text-black px-4 py-1.5 rounded-full text-sm font-bold shadow-lg inline-block transform group-hover:scale-105 transition-transform duration-300"
+            >
+              MEJOR PRECIO
+            </span>
+          </div>
+
+          <ul class="space-y-4 mb-6">
+            <li class="flex items-start gap-3">
+              <Check class="text-primery-yellow h-6 w-6 flex-shrink-0 mt-0.5" />
+              <span>Acceso completo al evento</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="text-primery-yellow h-6 w-6 flex-shrink-0 mt-0.5" />
+              <span>Materiales y kit de bienvenida</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="text-primery-yellow h-6 w-6 flex-shrink-0 mt-0.5" />
+              <span>Certificado de participación</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="text-primery-yellow h-6 w-6 flex-shrink-0 mt-0.5" />
+              <span>Pago único sin cargos adicionales</span>
+            </li>
+          </ul>
+
+          <div class="flex-grow"></div>
+        </div>
+
+        <div class="p-6 border-t border-zinc-700 bg-zinc-800">
+          <button
+            class="w-full bg-black hover:bg-primery-yellow hover:text-black cursor-pointer text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg group-hover:shadow-xl"
+          >
+            Comprar Ahora
+          </button>
+        </div>
+      </div>
+
+      <!-- Tier 2: 3 Pagos -->
+      <div
+        class="bg-gradient-to-br from-zinc-900 to-black rounded-xl shadow-xl overflow-hidden flex flex-col transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl relative z-20 scale-105 ring-2 ring-primery-yellow group"
+      >
+        <!-- Decorativo ribbon -->
+        <div
+          class="absolute -right-12 top-8 w-40 bg-primery-yellow text-black text-center text-xs py-1.5 font-bold shadow-lg transform rotate-45"
+        >
+          RECOMENDADO
+        </div>
+
+        <div class="absolute top-0 left-0 w-full">
+          <div class="flex justify-center">
+            <span
+              class="bg-primery-yellow px-6 py-1.5 rounded-b-lg text-sm font-bold text-black shadow-lg"
+            >
+              MÁS POPULAR
+            </span>
+          </div>
+        </div>
+
+        <div
+          class="p-6 border-b border-zinc-700 bg-gradient-to-r from-zinc-900 to-black pt-8"
+        >
+          <h2 class="font-Bebas text-4xl text-white text-center">3 Pagos</h2>
+          <p class="text-center text-primery-yellow text-3xl mt-3 font-bold">
+            $183 USD <span class="text-sm text-gray-400">× 3 pagos</span>
+          </p>
+          <p class="text-center text-gray-400 text-sm mt-1">Total: $550 USD</p>
+        </div>
+
+        <div class="p-6 sm:p-8 bg-zinc-800 flex-grow flex flex-col text-white">
+          <ul class="space-y-4 mb-6">
+            <li class="flex items-start gap-3">
+              <Check class="text-primery-yellow h-6 w-6 flex-shrink-0 mt-0.5" />
+              <span>Acceso completo al evento</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="text-primery-yellow h-6 w-6 flex-shrink-0 mt-0.5" />
+              <span>Materiales y kit de bienvenida</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="text-primery-yellow h-6 w-6 flex-shrink-0 mt-0.5" />
+              <span>Certificado de participación</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="text-primery-yellow h-6 w-6 flex-shrink-0 mt-0.5" />
+              <span>Facilidad de pago en 3 cuotas</span>
+            </li>
+          </ul>
+
+          <div class="flex-grow"></div>
+        </div>
+
+        <div class="p-6 border-t border-zinc-700 bg-zinc-800">
+          <button
+            class="w-full bg-primery-yellow hover:bg-yellow-500 cursor-pointer text-black font-bold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg transform group-hover:shadow-xl"
+          >
+            Elegir Plan
+          </button>
+        </div>
+      </div>
+
+      <!-- Tier 3: 5 Pagos -->
+      <div
+        class="bg-gradient-to-br from-zinc-900 to-black rounded-xl shadow-xl overflow-hidden flex flex-col transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group"
+      >
+        <div
+          class="p-6 border-b border-zinc-700 bg-gradient-to-r from-zinc-900 to-black"
+        >
+          <h2 class="font-Bebas text-4xl text-white text-center">5 Pagos</h2>
+          <p class="text-center text-primery-yellow text-3xl mt-3 font-bold">
+            $132 USD <span class="text-sm text-gray-400">× 5 pagos</span>
+          </p>
+          <p class="text-center text-gray-400 text-sm mt-1">Total: $660 USD</p>
+        </div>
+
+        <div class="p-6 sm:p-8 bg-zinc-800 flex-grow flex flex-col text-white">
+          <div class="mb-6 text-center">
+            <span
+              class="bg-gradient-to-r from-zinc-700 to-zinc-600 text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-lg inline-block transform group-hover:scale-105 transition-transform duration-300"
+            >
+              MÁXIMA FLEXIBILIDAD
+            </span>
+          </div>
+
+          <ul class="space-y-4 mb-6">
+            <li class="flex items-start gap-3">
+              <Check class="text-primery-yellow h-6 w-6 flex-shrink-0 mt-0.5" />
+              <span>Acceso completo al evento</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="text-primery-yellow h-6 w-6 flex-shrink-0 mt-0.5" />
+              <span>Materiales y kit de bienvenida</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="text-primery-yellow h-6 w-6 flex-shrink-0 mt-0.5" />
+              <span>Certificado de participación</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <Check class="text-primery-yellow h-6 w-6 flex-shrink-0 mt-0.5" />
+              <span>Máxima flexibilidad con 5 cuotas</span>
+            </li>
+          </ul>
+
+          <div class="flex-grow"></div>
+        </div>
+
+        <div class="p-6 border-t border-zinc-700 bg-zinc-800">
+          <button
+            class="w-full bg-black hover:bg-primery-yellow hover:text-black cursor-pointer text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg group-hover:shadow-xl"
+          >
+            Elegir Plan
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Garantía y notas adicionales -->
+    <div
+      class="mt-12 flex flex-col sm:flex-row items-center justify-center max-w-2xl mx-auto bg-gray-50 rounded-lg p-6 shadow-md border border-gray-100"
+    >
+      <div class="flex-shrink-0 text-primery-yellow mb-4 sm:mb-0 sm:mr-6">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-12 w-12"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+          ></path>
+        </svg>
+      </div>
+      <div class="text-center sm:text-left">
+        <h3 class="font-bold text-gray-800 text-lg mb-1">
+          Garantía de satisfacción
+        </h3>
+        <p class="text-gray-600">
+          Ofrecemos reembolso del 100% del valor del boleto hasta 30 días antes
+          del evento
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black to-transparent opacity-10"
+  >
+  </div>
+</section>
+
+<style>
+  /* Estilos para mejorar la apariencia y coherencia */
+  section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255, 204, 0, 0.3),
+      transparent
+    );
+    z-index: 2;
+  }
+
+  button {
+    position: relative;
+    overflow: hidden;
+  }
+
+  button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.8s;
+  }
+
+  button:hover::after {
+    left: 100%;
+  }
+</style>

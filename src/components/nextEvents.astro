@@ -1,0 +1,266 @@
+---
+import Map from "@/icons/map.astro";
+import Calendar from "@/icons/calendar.astro";
+import "flag-icons/css/flag-icons.min.css";
+---
+
+<section
+  id="eventos"
+  class="relative bg-black text-white overflow-hidden py-20 font-Os"
+>
+  <!-- Patrón de fondo sutil -->
+  <div class="absolute inset-0 opacity-5">
+    <div
+      class="absolute inset-0"
+      style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMzAgMzBsMyAzIDMgM00zMCAzMGwzLTMgMy0zTTMwIDMwbC0zIDMtMyAzTTMwIDMwbC0zLTMtMy0zIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==');"
+    >
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4 sm:px-6 relative z-10">
+    <!-- Encabezado de sección -->
+    <div class="text-center mb-16">
+      <h2
+        class="font-Bebas text-5xl md:text-6xl lg:text-7xl mb-4 tracking-wide relative inline-block"
+      >
+        PRÓXIMOS EVENTOS
+        <span
+          class="absolute -bottom-3 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primery-yellow to-transparent"
+        ></span>
+      </h2>
+
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto mt-6">
+        Descubre dónde y cuándo tendrá lugar la próxima revolución del grooming.
+        ¡Reserva tu lugar con anticipación!
+      </p>
+    </div>
+
+    <!-- Tarjetas de eventos con efecto hover -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Carta 1: México (Destacada) -->
+      <div
+        class="bg-gradient-to-b from-zinc-900 to-zinc-950 rounded-xl shadow-xl overflow-hidden flex flex-col h-auto transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl relative group"
+      >
+        <!-- Elemento decorativo -->
+        <div
+          class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primery-yellow to-yellow-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"
+        >
+        </div>
+
+        <div class="p-5 flex items-center gap-4 border-b border-zinc-700">
+          <span class="fi fi-mx text-4xl shadow-lg"></span>
+          <h2 class="font-Bebas text-3xl text-white flex-grow">
+            GroomCamp MÉXICO
+          </h2>
+          <span
+            class="text-primery-yellow font-bold text-lg bg-yellow-900/30 px-2 py-1 rounded-md"
+            >2025</span
+          >
+        </div>
+
+        <div class="p-6 bg-zinc-800/50 flex-grow flex flex-col text-white">
+          <div class="flex flex-col gap-4 mb-6">
+            <div class="flex items-center gap-3">
+              <div class="bg-zinc-700 p-2 rounded-full">
+                <Map />
+              </div>
+              <span class="text-lg">Chihuahua, México</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="bg-zinc-700 p-2 rounded-full">
+                <Calendar />
+              </div>
+              <span class="text-lg">Mayo | 27, 28 y 29</span>
+            </div>
+          </div>
+
+          <div class="bg-zinc-900/50 p-4 rounded-lg mb-6">
+            <p class="text-base text-gray-200">
+              Atrévete a experimentar la nueva experiencia del grooming con
+              nosotros, anímate a vivir la revolución del grooming en México.
+            </p>
+          </div>
+
+          <!-- Etiqueta de estado -->
+          <div
+            class="inline-block bg-green-600 text-white text-sm px-3 py-1 rounded-full mb-4"
+          >
+            ¡INSCRIPCIONES ABIERTAS!
+          </div>
+        </div>
+
+        <div class="p-5 bg-zinc-800/80">
+          <a
+            href="#boletos"
+            class="block w-full bg-gradient-to-r from-primery-yellow to-yellow-500 hover:from-yellow-500 hover:to-primery-yellow text-white font-bold py-3 px-4 rounded-lg transition duration-300 text-center shadow-lg transform group-hover:-translate-y-1"
+          >
+            COMPRAR ENTRADAS
+          </a>
+        </div>
+      </div>
+
+      <!-- Carta 2: Madrid -->
+      <div
+        class="bg-gradient-to-b from-zinc-900 to-zinc-950 rounded-xl shadow-xl overflow-hidden flex flex-col h-auto transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl relative group"
+      >
+        <div class="p-5 flex items-center gap-4 border-b border-zinc-700">
+          <span class="fi fi-es text-4xl shadow-lg"></span>
+          <h2 class="font-Bebas text-3xl text-white flex-grow">
+            GroomCamp ESPAÑA
+          </h2>
+          <span
+            class="text-primery-yellow font-bold text-lg bg-yellow-900/30 px-2 py-1 rounded-md"
+            >2025</span
+          >
+        </div>
+
+        <div class="p-6 bg-zinc-800/50 flex-grow flex flex-col text-white">
+          <div class="flex flex-col gap-4 mb-6">
+            <div class="flex items-center gap-3">
+              <div class="bg-zinc-700 p-2 rounded-full">
+                <Map />
+              </div>
+              <span class="text-lg">Madrid, España</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="bg-zinc-700 p-2 rounded-full">
+                <Calendar />
+              </div>
+              <span class="text-lg">Octubre | 15, 16 y 17</span>
+            </div>
+          </div>
+
+          <div class="bg-zinc-900/50 p-4 rounded-lg mb-6">
+            <p class="text-base text-gray-200">
+              ¡GroomCamp llega a Europa! Vive la experiencia de primera mano en
+              la capital española con los mejores expertos del continente.
+            </p>
+          </div>
+
+          <!-- Etiqueta de estado -->
+          <div
+            class="inline-block bg-yellow-600 text-white text-sm px-3 py-1 rounded-full mb-4"
+          >
+            PRÓXIMAMENTE
+          </div>
+        </div>
+
+        <div class="p-5 bg-zinc-800/80">
+          <button
+            disabled
+            class="block w-full bg-zinc-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 text-center shadow-lg opacity-80 cursor-not-allowed"
+          >
+            LISTA DE ESPERA
+          </button>
+        </div>
+      </div>
+
+      <!-- Carta 3: Costa Rica -->
+      <div
+        class="bg-gradient-to-b from-zinc-900 to-zinc-950 rounded-xl shadow-xl overflow-hidden flex flex-col h-auto transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl relative group"
+      >
+        <div class="p-5 flex items-center gap-4 border-b border-zinc-700">
+          <span class="fi fi-cr text-4xl shadow-lg"></span>
+          <h2 class="font-Bebas text-3xl text-white flex-grow">
+            GroomCamp COSTA RICA
+          </h2>
+          <span
+            class="text-primery-yellow font-bold text-lg bg-yellow-900/30 px-2 py-1 rounded-md"
+            >2025</span
+          >
+        </div>
+
+        <div class="p-6 bg-zinc-800/50 flex-grow flex flex-col text-white">
+          <div class="flex flex-col gap-4 mb-6">
+            <div class="flex items-center gap-3">
+              <div class="bg-zinc-700 p-2 rounded-full">
+                <Map />
+              </div>
+              <span class="text-lg">San José, Costa Rica</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="bg-zinc-700 p-2 rounded-full">
+                <Calendar />
+              </div>
+              <span class="text-lg">Noviembre | 2025</span>
+            </div>
+          </div>
+
+          <div class="bg-zinc-900/50 p-4 rounded-lg mb-6">
+            <p class="text-base text-gray-200">
+              Regresamos al lugar donde comenzó todo. Vive la experiencia de
+              GroomCamp en el corazón de Centroamérica antes de que termine el
+              año.
+            </p>
+          </div>
+
+          <!-- Etiqueta de estado -->
+          <div
+            class="inline-block bg-gray-600 text-white text-sm px-3 py-1 rounded-full mb-4"
+          >
+            EN PLANIFICACIÓN
+          </div>
+        </div>
+
+        <div class="p-5 bg-zinc-800/80">
+          <button
+            disabled
+            class="block w-full bg-zinc-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 text-center shadow-lg opacity-80 cursor-not-allowed"
+          >
+            PRÓXIMAMENTE
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Elemento decorativo de fondo -->
+  <div
+    class="absolute right-0 top-1/4 w-64 h-64 bg-primery-yellow opacity-5 rounded-full blur-3xl -z-10"
+  >
+  </div>
+  <div
+    class="absolute left-0 bottom-1/4 w-96 h-96 bg-primery-yellow opacity-5 rounded-full blur-3xl -z-10"
+  >
+  </div>
+</section>
+
+<style>
+  /* Mejora visual para las banderas */
+  .fi {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  }
+
+  /* Separador superior e inferior de la sección */
+  section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255, 204, 0, 0.2),
+      transparent
+    );
+    z-index: 2;
+  }
+
+  section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255, 204, 0, 0.2),
+      transparent
+    );
+    z-index: 2;
+  }
+</style>

@@ -1,0 +1,199 @@
+---
+import { Image } from "astro:assets";
+---
+
+<section
+  id="quienes-somos"
+  class="relative bg-black text-white overflow-hidden py-16 font-Os"
+>
+  <!-- Patrón de fondo sutil -->
+  <div class="absolute inset-0 opacity-5">
+    <div
+      class="absolute inset-0"
+      style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMzAgMzBsMyAzIDMgM00zMCAzMGwzLTMgMy0zTTMwIDMwbC0zIDMtMyAzTTMwIDMwbC0zLTMtMy0zIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==');"
+    >
+    </div>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <!-- Título principal con acento amarillo -->
+    <div class="flex flex-col items-center mb-12">
+      <h2
+        class="font-Bebas text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-wide text-center relative"
+      >
+        ¿QUÉ ES EL GROOMCAMP?
+        <span
+          class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 h-1 w-24 md:w-32 bg-primery-yellow"
+        ></span>
+      </h2>
+    </div>
+
+    <!-- Contenido principal -->
+    <div
+      class="flex flex-col lg:flex-row items-center justify-between gap-12 md:gap-16 max-w-7xl mx-auto"
+    >
+      <!-- Columna izquierda de texto -->
+      <div class="w-full lg:w-1/2 space-y-6 md:space-y-8">
+        <p class="text-lg sm:text-xl md:text-2xl leading-relaxed">
+          El <span class="text-primery-yellow font-bold">GroomCamp</span> es el evento
+          más innovador dentro del ecosistema del grooming, pionero en utilizar un
+          formato mucho más familiar, divertido y enfocado en brindar una <span
+            class="italic">experiencia única</span
+          >.
+        </p>
+
+        <div class="h-0.5 w-24 bg-primery-yellow opacity-80"></div>
+
+        <p class="text-lg sm:text-xl leading-relaxed">
+          Desde nuestro primer evento en 2024 realizado en Costa Rica, hemos
+          encontrado la fórmula perfecta entre <span class="text-primery-yellow"
+            >diversión, crecimiento, aprendizaje y convivencia</span
+          >.
+        </p>
+
+        <p class="text-lg sm:text-xl leading-relaxed">
+          Nuestro objetivo es que cada asistente se lleve una experiencia
+          inolvidable, tanto en el ámbito profesional como personal, apoyando a
+          todo asistente
+          <span class="bg-primery-yellow text-black px-2 py-1 font-bold"
+            >TENGA O NO EXPERIENCIA</span
+          >
+          para vivir algo verdaderamente diferente.
+        </p>
+
+        <!-- Lista de características -->
+        <div class="pt-4">
+          <h3 class="font-Bebas text-2xl md:text-3xl mb-4 text-primery-yellow">
+            CARACTERÍSTICAS DEL EVENTO
+          </h3>
+          <ul class="space-y-3">
+            {
+              [
+                "Formato campamento de inmersión de 3 días",
+                "Acceso total a demostraciones y talleres",
+                "Alojamiento y comidas incluidos",
+                "Actividades de team building y networking",
+                "Certificado oficial de participación",
+              ].map((item) => (
+                <li class="flex items-start">
+                  <span class="text-primery-yellow mr-2">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+
+      <!-- Columna derecha con imágenes -->
+      <div class="w-full lg:w-1/2 relative">
+        <!-- Grid de imágenes -->
+        <div class="grid grid-cols-2 gap-4">
+          <!-- Logo principal -->
+          <div
+            class="col-span-2 bg-zinc-900 rounded-xl p-8 flex items-center justify-center transform hover:scale-[1.02] transition-transform duration-300"
+          >
+            <Image
+              src="/images/LOGO.webp"
+              alt="Logo de GroomCamp"
+              width={400}
+              height={200}
+              class="object-contain max-h-[180px] w-auto"
+            />
+          </div>
+
+          <!-- Imagen 1 -->
+          <div
+            class="bg-zinc-800 rounded-xl overflow-hidden shadow-lg transform hover:scale-[1.03] transition-transform duration-300"
+          >
+            <Image
+              src="/images/bentoback1.webp"
+              alt="Participantes en el GroomCamp"
+              width={300}
+              height={300}
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-80"
+            >
+            </div>
+          </div>
+
+          <!-- Imagen 2 -->
+          <div
+            class="bg-zinc-800 rounded-xl overflow-hidden shadow-lg transform hover:scale-[1.03] transition-transform duration-300"
+          >
+            <div
+              class="bg-primery-yellow h-full flex items-center justify-center p-4 text-black"
+            >
+              <p
+                class="font-Bebas text-4xl sm:text-5xl md:text-6xl text-center leading-tight"
+              >
+                ¡ÚNETE A LA REVOLUCIÓN!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Elemento decorativo -->
+        <div
+          class="absolute -bottom-6 -right-6 h-20 w-20 border-4 border-primery-yellow rounded-full opacity-30 z-0"
+        >
+        </div>
+        <div
+          class="absolute -top-6 -left-6 h-12 w-12 border-2 border-primery-yellow rounded-full opacity-20 z-0"
+        >
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-16 text-center">
+      <a
+        href="#boletos"
+        class="inline-block bg-gradient-to-r from-primery-yellow to-yellow-500 text-black px-10 py-3 rounded-lg text-xl sm:text-2xl font-bold hover:from-yellow-500 hover:to-primery-yellow hover:scale-105 transition-all duration-300 shadow-xl transform hover:-translate-y-1"
+      >
+        RESERVA TU EXPERIENCIA HOY
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    position: relative;
+    z-index: 1;
+  }
+
+  section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255, 204, 0, 0.5),
+      transparent
+    );
+    z-index: 2;
+  }
+
+  section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255, 204, 0, 0.3),
+      transparent
+    );
+    z-index: 2;
+  }
+</style>

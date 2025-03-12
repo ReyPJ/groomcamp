@@ -3,9 +3,13 @@ import { Image } from "astro:assets";
 import "flag-icons/css/flag-icons.min.css";
 ---
 
-<div class="w-full h-[600px] font-Bebas">
-  <div class="grid grid-cols-5 grid-rows-5 gap-2 h-full">
-    <div class="col-span-4 row-span-4 relative overflow-hidden">
+<div class="w-full font-Bebas relative overflow-hidden">
+  <!-- Grid layout principal -->
+  <div class="grid grid-cols-1 md:grid-cols-5 gap-2">
+    <!-- Panel principal - Imagen de fondo con texto -->
+    <div
+      class="md:col-span-4 relative h-[60vh] md:h-[70vh] lg:h-[80vh] order-1"
+    >
       <picture class="w-full h-full">
         <Image
           src="/images/bentoback1.webp"
@@ -13,68 +17,121 @@ import "flag-icons/css/flag-icons.min.css";
           width={1920}
           height={1080}
           loading={"eager"}
-          class="max-h-full max-w-full object-cover object-bottom"
+          class="w-full h-full object-cover object-bottom"
         />
       </picture>
-      <div class="absolute inset-0 bg-gradient-to-b from-black/20 to-black/40">
-      </div>
+
+      <!-- Overlay con gradiente -->
       <div
-        class="absolute inset-0 flex flex-col items-center justify-center text-white text-4xl p-6 text-shadow-lg"
+        class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/70"
       >
-        <h2>Bienvenido a la nueva casa del GroomCamp</h2>
-        <h3>¿Estas preparado?</h3>
       </div>
-    </div>
-    <div
-      class="row-span-3 flex-col gap-2 col-start-5 bg-primery-yellow flex items-center justify-center text-4xl text-center p-4"
-    >
-      <h2>La revolución del grooming ha comenzado</h2>
-      <h3>¡Se parte de ella!</h3>
+
+      <!-- Contenido del panel principal -->
+      <div
+        class="absolute inset-0 flex flex-col items-center justify-center text-white p-4 text-center"
+      >
+        <h1
+          class="text-3xl sm:text-4xl md:text-5xl mb-2 tracking-wider transform transition-all duration-700 animate-fadeIn"
+        >
+          GROOM CAMP
+        </h1>
+        <h2
+          class="text-lg sm:text-xl md:text-2xl mb-3 tracking-wide transform transition-all duration-700 delay-300 animate-fadeIn"
+        >
+          Bienvenido a la nueva casa del GroomCamp
+        </h2>
+        <p
+          class="text-base sm:text-lg md:text-xl tracking-wide max-w-lg transform transition-all duration-700 delay-500 animate-fadeIn mb-3"
+        >
+          ¿Estás preparado para llevar tu grooming al siguiente nivel?
+        </p>
+
+        <!-- Botón CTA principal -->
+        <a
+          href="#boletos"
+          class="mt-1 bg-gradient-to-r from-primery-yellow to-yellow-500 text-white px-6 py-1.5 rounded-lg text-base sm:text-lg font-bold hover:from-yellow-500 hover:to-primery-yellow hover:scale-105 transition-all duration-300 shadow-lg transform hover:-translate-y-1"
+        >
+          RESERVA TU LUGAR
+        </a>
+      </div>
     </div>
 
-    <div
-      class="bg-black row-span-2 flex flex-col text-white justify-center items-center col-start-5 row-start-4 relative overflow-hidden"
-    >
-      <span class="fi fi-mx text-4xl py-2"></span>
-      <h1 class="text-4xl">chihuahua</h1>
-      <p class="text-2xl">Mayo 27, 28 y 29</p>
-      <button
-        class="text-xl cursor-pointer bg-primery-yellow rounded-lg p-1 w-1/2 hover:bg-primery-yellow/80 transition delay-75"
-        >Compra tus entradas</button
+    <!-- Sección derecha para paneles secundarios en escritorio -->
+    <div class="md:col-span-1 grid grid-cols-1 md:grid-rows-3 gap-2">
+      <!-- Panel amarillo con texto -->
+      <div
+        class="md:row-span-2 bg-gradient-to-br from-primery-yellow to-yellow-500 flex flex-col items-center justify-center p-3 order-2 text-center h-[110px] md:h-auto"
       >
-    </div>
-    <div
-      class="col-span-4 row-start-5 flex-col p-4 bg-primery-yellow gap-2 flex items-center justify-center text-4xl"
-    >
-      <div>
-        <h3 class="text-xl">Patrocinan</h3>
+        <h2 class="text-lg sm:text-xl md:text-2xl font-bold mb-1 text-black">
+          LA REVOLUCIÓN DEL GROOMING HA COMENZADO
+        </h2>
+        <h3 class="text-base sm:text-lg md:text-xl text-zinc-900 font-medium">
+          ¡SÉ PARTE DE ELLA!
+        </h3>
       </div>
-      <div class="flex justify-evenly w-full">
-        <Image
-          src="/images/LOGO.webp"
-          alt="Logo de groomcamp"
-          width={64}
-          height={64}
-        />
-        <Image
-          src="/images/LOGO.webp"
-          alt="Logo de groomcamp"
-          width={64}
-          height={64}
-        />
-        <Image
-          src="/images/LOGO.webp"
-          alt="Logo de groomcamp"
-          width={64}
-          height={64}
-        />
-        <Image
-          src="/images/LOGO.webp"
-          alt="Logo de groomcamp"
-          width={64}
-          height={64}
-        />
+
+      <!-- Panel de evento con fecha -->
+      <div
+        class="md:row-span-1 bg-black text-white flex flex-col justify-center items-center p-3 relative overflow-hidden order-3 h-[140px] md:h-auto"
+      >
+        <!-- Fondo con efecto de patrón y gradiente sutil -->
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-zinc-900 to-black opacity-90"
+        >
+        </div>
+        <div
+          class="absolute inset-0 opacity-10 bg-repeat z-0"
+          style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMiIgaGVpZ2h0PSIyIiBmaWxsPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAuNSIvPjwvc3ZnPg==');"
+        >
+        </div>
+
+        <!-- Contenido del panel de evento -->
+        <div class="z-1 flex flex-col items-center">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="fi fi-mx text-2xl md:text-3xl shadow-lg"></span>
+            <h3 class="text-xl md:text-2xl">CHIHUAHUA</h3>
+          </div>
+          <p class="text-base md:text-lg mb-2">Mayo 27, 28 y 29</p>
+
+          <!-- Botón de compra -->
+          <a
+            href="#boletos"
+            class="bg-primery-yellow text-white font-bold py-1 px-4 rounded-lg text-sm hover:bg-yellow-500 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
+          >
+            COMPRAR ENTRADAS
+          </a>
+        </div>
+
+        <!-- Indicador de plazas limitadas -->
+        <div
+          class="absolute top-2 right-2 bg-red-600 text-white text-xs px-1.5 py-0.5 rounded-full animate-pulse shadow-md"
+        >
+          ¡PLAZAS LIMITADAS!
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .fi.fi-mx {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  }
+</style>

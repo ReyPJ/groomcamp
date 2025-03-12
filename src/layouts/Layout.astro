@@ -1,6 +1,10 @@
 ---
 import "@/styles/global.css";
-let title = "Groom Camp Coming Soon";
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -8,7 +12,8 @@ let title = "Groom Camp Coming Soon";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Groom Camp</title>
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
   </head>
   <body class="bg-zinc-100">
     <slot />

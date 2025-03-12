@@ -1,8 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Bento from "@/components/bento.astro";
+import WhoWeAre from "@/components/whoWeAre.astro";
+import NextEvents from "@/components/nextEvents.astro";
+import TicketTiers from "@/components/ticketTiers.astro";
+import Footer from "@/components/footer.astro";
+import Header from "@/components/header.tsx";
 ---
 
-<Layout title="GroomCamp Web">
+<Layout title="Groom Camp">
+  <Header client:load />
   <Bento />
+  <WhoWeAre />
+  <NextEvents />
+  <TicketTiers />
+  <Footer />
 </Layout>
