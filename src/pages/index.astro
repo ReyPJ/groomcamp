@@ -5,11 +5,13 @@ import WhoWeAre from "@/components/whoWeAre.astro";
 import NextEvents from "@/components/nextEvents.astro";
 import TicketTiers from "@/components/ticketTiers.astro";
 import Footer from "@/components/footer.astro";
-import Header from "@/components/header.svelte";
+// import Header from "@/components/header.svelte";
+import MobileMenu from "@/components/mobileMenu.astro";
 ---
 
 <Layout title="Groom Camp">
-  <Header client:load />
+  <!-- <Header client:load /> -->
+  <MobileMenu />
   <Bento />
   <WhoWeAre />
   <NextEvents />
