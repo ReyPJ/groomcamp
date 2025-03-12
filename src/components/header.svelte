@@ -1,29 +1,32 @@
 <script>
-  // Importar la transición fade de Svelte
-  import { fade } from "svelte/transition";
+  import { onMount } from "svelte";
 
   // Estado para controlar la apertura del menú
   let isMenuOpen = false;
+  let mounted = false;
 
-  // Función para alternar el estado del menú
+  // Simplificado para mejor rendimiento
+  onMount(() => {
+    mounted = true;
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  });
+
+  // Función de toggle simplificada
   function toggleMenu() {
     isMenuOpen = !isMenuOpen;
 
+    // Controlar el overflow del body
     if (isMenuOpen) {
       document.body.classList.add("overflow-hidden");
     } else {
       document.body.classList.remove("overflow-hidden");
     }
   }
-
-  // Función para cerrar el menú
-  function closeMenu() {
-    isMenuOpen = false;
-    document.body.classList.remove("overflow-hidden");
-  }
 </script>
 
-<header class="bg-primary-black shadow-lg w-full py-2" style="z-index: 9999;">
+<header class="bg-primary-black shadow-lg w-full py-2 z-[9999]">
   <div class="container mx-auto px-4">
     <div class="flex items-center justify-between py-6">
       <!-- Logo -->
@@ -103,54 +106,68 @@
         </a>
       </div>
 
-      <!-- Botón de menú móvil -->
+      <!-- Botón de menú móvil - Simplificado -->
       <button
         on:click={toggleMenu}
-        class="lg:hidden p-2 rounded-lg z-20 focus:outline-none {isMenuOpen
+        class="lg:hidden p-2 rounded-lg z-20 focus:outline-none active:bg-zinc-700 {isMenuOpen
           ? 'text-white bg-zinc-900'
           : 'text-primery-yellow bg-zinc-800'}"
         aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+        aria-expanded={isMenuOpen}
+        id="menu-toggle"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-8 w-8"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          aria-hidden="true"
-        >
-          {#if !isMenuOpen}
+        {#if !isMenuOpen}
+          <span class="sr-only">Abrir menú</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
               d="M4 6h16M4 12h16M4 18h16"
             />
-          {:else}
+          </svg>
+        {:else}
+          <span class="sr-only">Cerrar menú</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
               d="M6 18L18 6M6 6l12 12"
             />
-          {/if}
-        </svg>
+          </svg>
+        {/if}
       </button>
     </div>
   </div>
 
-  <!-- Menú móvil -->
-  {#if isMenuOpen}
+  <!-- Menú móvil - COMPLETAMENTE SIMPLIFICADO -->
+  {#if mounted && isMenuOpen}
     <div
-      class="fixed inset-0 bg-black z-10 lg:hidden"
-      in:fade={{ duration: 100 }}
-      out:fade={{ duration: 100 }}
+      class="fixed inset-0 bg-zinc-900 z-10 lg:hidden"
+      style="background-color: rgb(24, 24, 27);"
     >
-      <div class="container mx-auto px-6 pt-28 pb-8">
+      <div class="absolute inset-0 bg-black" aria-hidden="true"></div>
+
+      <div class="container mx-auto px-6 pt-28 pb-8 relative z-10">
         <nav class="flex flex-col space-y-6">
           <a
             href="#inicio"
-            on:click={closeMenu}
+            on:click={toggleMenu}
             class="text-white hover:text-primery-yellow font-Bebas text-3xl tracking-wide flex items-center border-b border-zinc-800 pb-4"
           >
             <span class="text-primery-yellow mr-3 text-2xl">01.</span>
@@ -158,7 +175,7 @@
           </a>
           <a
             href="#nuestro-equipo"
-            on:click={closeMenu}
+            on:click={toggleMenu}
             class="text-white hover:text-primery-yellow font-Bebas text-3xl tracking-wide flex items-center border-b border-zinc-800 pb-4"
           >
             <span class="text-primery-yellow mr-3 text-2xl">02.</span>
@@ -166,7 +183,7 @@
           </a>
           <a
             href="#contacto"
-            on:click={closeMenu}
+            on:click={toggleMenu}
             class="text-white hover:text-primery-yellow font-Bebas text-3xl tracking-wide flex items-center border-b border-zinc-800 pb-4"
           >
             <span class="text-primery-yellow mr-3 text-2xl">03.</span>
@@ -176,7 +193,7 @@
           <div class="flex justify-between pt-6">
             <a
               href="/usuario"
-              on:click={closeMenu}
+              on:click={toggleMenu}
               class="bg-zinc-800 hover:bg-zinc-700 text-white p-3 rounded-lg"
               aria-label="Perfil de usuario"
             >
@@ -198,7 +215,7 @@
             </a>
             <a
               href="/carrito"
-              on:click={closeMenu}
+              on:click={toggleMenu}
               class="bg-zinc-800 hover:bg-zinc-700 text-white p-3 rounded-lg"
               aria-label="Ver carrito de compras"
             >
@@ -239,5 +256,13 @@
 
   :global(.lg\:flex a:hover::after) {
     width: 100%;
+  }
+
+  /* Eliminar transiciones en mobile para mejorar rendimiento */
+  @media (max-width: 1023px) {
+    :global(a),
+    :global(button) {
+      transition: none !important;
+    }
   }
 </style>

@@ -5,16 +5,50 @@ import WhoWeAre from "@/components/whoWeAre.astro";
 import NextEvents from "@/components/nextEvents.astro";
 import TicketTiers from "@/components/ticketTiers.astro";
 import Footer from "@/components/footer.astro";
-// import Header from "@/components/header.svelte";
-import MobileMenu from "@/components/mobileMenu.astro";
+import Header from "@/components/header.svelte";
 ---
 
 <Layout title="Groom Camp">
-  <!-- <Header client:load /> -->
-  <MobileMenu />
+  <Header client:only="svelte" />
   <Bento />
   <WhoWeAre />
   <NextEvents />
   <TicketTiers />
   <Footer />
 </Layout>
+
+<script>
+  // Precarga crítica del módulo Svelte
+  const preloadSvelte = document.createElement("link");
+  preloadSvelte.rel = "modulepreload";
+  preloadSvelte.href = "/@astrojs/svelte/client.js";
+  document.head.appendChild(preloadSvelte);
+
+  // Cache del menú móvil después de la primera interacción
+  document.addEventListener("DOMContentLoaded", () => {
+    // Flag for whether menu has been opened before
+    let menuInitialized = false;
+
+    // Check if menu was previously initialized
+    if (localStorage.getItem("menu_initialized") === "true") {
+      menuInitialized = true;
+    }
+
+    // Listen for menu button clicks to set the cache flag
+    document.addEventListener(
+      "click",
+      (e: MouseEvent) => {
+        const menuButton = (e.target as HTMLElement)?.closest(
+          '#menu-toggle, [aria-label="Abrir menú"], [aria-label="Cerrar menú"]'
+        );
+
+        if (menuButton && !menuInitialized) {
+          // After first interaction, add this to localStorage
+          localStorage.setItem("menu_initialized", "true");
+          menuInitialized = true;
+        }
+      },
+      { capture: true }
+    );
+  });
+</script>
