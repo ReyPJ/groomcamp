@@ -1,0 +1,275 @@
+---
+// filepath: /home/reypj/workspace/github/groomcamp/src/pages/events/[eventName].astro
+import Layout from "../../layouts/Layout.astro";
+import Header from "@/components/header.astro";
+import Footer from "@/components/footer.astro";
+import EventHero from "@/components/eventHero";
+import EventDetails from "@/components/evenDetails";
+import EventSchedule from "@/components/eventSchedule";
+import EventSpeakers from "@/components/eventSpeakers";
+import EventLocation from "@/components/eventLocation";
+import EventGallery from "@/components/eventGallery";
+import EventRegistration from "@/components/eventRegistration";
+import EventRelated from "@/components/eventRelated";
+
+// Esta función solo ejecuta en tiempo de build
+export async function getStaticPaths() {
+  // Aquí normalmente cargarías los eventos desde una API
+  // Por ahora, usaremos datos de muestra
+  const events = [
+    { id: 1, slug: "chihuahua-camp-2024" },
+    { id: 2, slug: "puebla-grooming-expo" },
+    { id: 3, slug: "cdmx-master-class" },
+  ];
+
+  return events.map((event) => ({
+    params: { eventName: event.slug },
+    props: { eventId: event.id },
+  }));
+}
+
+// Props recibidos de getStaticPaths
+const { eventId } = Astro.props;
+const { eventName } = Astro.params;
+
+// En un escenario real, aquí harías la llamada a tu API usando el ID o slug
+// Esto es un mock de datos, la implementación real la harás tú después
+const eventData = {
+  id: eventId,
+  name:
+    eventName?.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()) ||
+    "",
+  date: "Mayo 27-29, 2024",
+  location: "Chihuahua, México",
+  venue: "Centro de Convenciones de Chihuahua",
+  image: "/images/bentoback1.webp",
+  description:
+    "Únete a nosotros en este evento único de grooming donde podrás aprender de los mejores profesionales del sector. Tres días intensivos con talleres prácticos, demostraciones en vivo y networking.",
+  shortDescription:
+    "El evento de grooming más importante en el norte de México",
+  price: {
+    regular: 2500,
+    early: 1800,
+    vip: 3500,
+  },
+  schedule: [
+    {
+      day: "Día 1 - 27 de Mayo",
+      events: [
+        {
+          time: "09:00 - 10:00",
+          title: "Registro y bienvenida",
+          description: "Check-in y entrega de materiales",
+        },
+        {
+          time: "10:00 - 12:00",
+          title: "Técnicas básicas de corte",
+          description: "Workshop con Miguel Rodríguez",
+        },
+        {
+          time: "12:00 - 13:00",
+          title: "Almuerzo networking",
+          description: "Área de exposición",
+        },
+        {
+          time: "13:00 - 15:00",
+          title: "Grooming creativo",
+          description: "Demostraciones con Laura Sánchez",
+        },
+        {
+          time: "15:00 - 17:00",
+          title: "Concurso de velocidad",
+          description: "Premiación al mejor tiempo",
+        },
+      ],
+    },
+    {
+      day: "Día 2 - 28 de Mayo",
+      events: [
+        {
+          time: "09:00 - 11:00",
+          title: "Técnicas avanzadas",
+          description: "Workshop especializado",
+        },
+        {
+          time: "11:00 - 13:00",
+          title: "Panel de expertos",
+          description: "Preguntas y respuestas",
+        },
+        {
+          time: "13:00 - 14:00",
+          title: "Almuerzo",
+          description: "Área de exposición",
+        },
+        {
+          time: "14:00 - 16:00",
+          title: "Tendencias 2024",
+          description: "Presentación de novedades",
+        },
+        {
+          time: "16:00 - 18:00",
+          title: "Competencia amateur",
+          description: "Participantes seleccionados",
+        },
+      ],
+    },
+    {
+      day: "Día 3 - 29 de Mayo",
+      events: [
+        {
+          time: "09:00 - 11:00",
+          title: "Marketing para groomers",
+          description: "Cómo hacer crecer tu negocio",
+        },
+        {
+          time: "11:00 - 13:00",
+          title: "Workshop de fotografía",
+          description: "Captura tus mejores trabajos",
+        },
+        {
+          time: "13:00 - 14:00",
+          title: "Almuerzo de cierre",
+          description: "Área VIP",
+        },
+        {
+          time: "14:00 - 16:00",
+          title: "Gran competencia final",
+          description: "Mejores groomers del país",
+        },
+        {
+          time: "16:00 - 17:00",
+          title: "Ceremonia de premiación",
+          description: "Entrega de reconocimientos",
+        },
+      ],
+    },
+  ],
+  speakers: [
+    {
+      id: 1,
+      name: "Miguel Rodríguez",
+      role: "Master Groomer Internacional",
+      bio: "Con más de 15 años de experiencia internacional, especialista en razas nórdicas y ganador de múltiples premios en competencias internacionales.",
+      image: "/images/speaker1.webp",
+      social: {
+        instagram: "#",
+        twitter: "#",
+        facebook: "#",
+      },
+    },
+    {
+      id: 2,
+      name: "Laura Sánchez",
+      role: "Especialista en Grooming Creativo",
+      bio: "Pionera en técnicas de grooming creativo en Latinoamérica. Ha trabajado con celebridades y participado en programas de televisión.",
+      image: "/images/speaker2.webp",
+      social: {
+        instagram: "#",
+        youtube: "#",
+      },
+    },
+    {
+      id: 3,
+      name: "Carlos Méndez",
+      role: "Director de la Asociación Internacional de Grooming",
+      bio: "Referente mundial en estándares de grooming y presidente del jurado en las principales competiciones internacionales.",
+      image: "/images/speaker3.webp",
+      social: {
+        instagram: "#",
+        linkedin: "#",
+      },
+    },
+    {
+      id: 4,
+      name: "Ana Gutiérrez",
+      role: "Especialista en Peluquería Canina Asiática",
+      bio: "Formada en Japón, experta en técnicas orientales de grooming con un enfoque en el bienestar animal y técnicas naturales.",
+      image: "/images/speaker4.webp",
+      social: {
+        instagram: "#",
+        facebook: "#",
+      },
+    },
+  ],
+  venueDetails: {
+    address: "Av. Tecnológico 1600, Col. Granjas, 31100 Chihuahua, Chih.",
+    coordinates: {
+      lat: 28.635308,
+      lng: -106.089904,
+    },
+    parking: true,
+    publicTransport: true,
+    amenities: [
+      "Accesibilidad",
+      "WiFi gratuito",
+      "Área de exposición",
+      "Cafetería",
+    ],
+  },
+  gallery: [
+    "/images/event-gallery-1.webp",
+    "/images/event-gallery-2.webp",
+    "/images/event-gallery-3.webp",
+    "/images/event-gallery-4.webp",
+    "/images/event-gallery-5.webp",
+    "/images/event-gallery-6.webp",
+  ],
+  relatedEvents: [
+    {
+      id: 2,
+      name: "Puebla Grooming Expo",
+      date: "Julio 15-17, 2024",
+      image: "/images/related-event-1.webp",
+      slug: "puebla-grooming-expo",
+    },
+    {
+      id: 3,
+      name: "CDMX Master Class",
+      date: "Agosto 5-7, 2024",
+      image: "/images/related-event-2.webp",
+      slug: "cdmx-master-class",
+    },
+  ],
+};
+---
+
+<Layout title={`${eventData.name} | Groom Camp`}>
+  <Header />
+
+  <main>
+    <EventHero
+      client:load
+      name={eventData.name}
+      date={eventData.date}
+      location={eventData.location}
+      image={eventData.image}
+      shortDescription={eventData.shortDescription}
+    />
+
+    <EventDetails
+      client:visible
+      description={eventData.description}
+      venue={eventData.venue}
+      price={eventData.price}
+    />
+
+    <EventSchedule client:visible schedule={eventData.schedule} />
+
+    <EventSpeakers client:visible speakers={eventData.speakers} />
+
+    <EventLocation client:visible location={eventData.venueDetails} />
+
+    <EventGallery client:idle images={eventData.gallery} />
+
+    <EventRegistration
+      client:idle
+      eventName={eventData.name}
+      eventDate={eventData.date}
+      price={eventData.price}
+    />
+
+    <EventRelated client:idle events={eventData.relatedEvents} />
+  </main>
+
+  <Footer />
+</Layout>
