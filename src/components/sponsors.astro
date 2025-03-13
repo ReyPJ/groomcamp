@@ -1,0 +1,120 @@
+<section id="sponsors" class="bg-zinc-900 py-20 relative overflow-hidden">
+  <!-- Elemento decorativo - Efecto de luz diagonal -->
+  <div
+    class="absolute inset-0 bg-gradient-to-br from-primary-black via-transparent to-transparent opacity-70"
+  >
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <!-- Título de sección con estilo consistente -->
+    <div class="text-center mb-16">
+      <h2 class="font-Bebas text-4xl md:text-5xl lg:text-6xl text-white mb-2">
+        NUESTROS <span class="text-primery-yellow">SPONSORS</span>
+      </h2>
+      <div class="w-24 h-1 bg-primery-yellow mx-auto"></div>
+      <p class="text-zinc-400 mt-6 max-w-2xl mx-auto">
+        Aliados estratégicos que hacen posible la experiencia Groom Camp
+      </p>
+    </div>
+
+    <!-- Sponsors principales - Fila destacada -->
+    <div class="mb-16">
+      <h3 class="font-Bebas text-2xl text-center text-zinc-300 mb-8">
+        SPONSORS <span class="text-primery-yellow">PREMIUM</span>
+      </h3>
+      <div class="flex flex-wrap justify-center gap-8 md:gap-12">
+        {
+          [1, 2, 3].map(() => (
+            <div class="bg-zinc-800 rounded-xl p-6 flex items-center justify-center shadow-lg transform hover:scale-105 transition-transform duration-300 border border-zinc-700 hover:border-primery-yellow">
+              <img
+                src="/images/LOGO.webp"
+                alt="Sponsor Logo"
+                class="h-20 w-48 object-contain"
+                loading="lazy"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Sponsors secundarios - Grid -->
+    <div>
+      <h3 class="font-Bebas text-2xl text-center text-zinc-300 mb-8">
+        SPONSORS <span class="text-white">OFICIALES</span>
+      </h3>
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 items-center"
+      >
+        {
+          [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(() => (
+            <div class="bg-zinc-800/60 p-4 rounded-lg flex items-center justify-center h-24 transform hover:bg-zinc-800 transition-all duration-300 group">
+              <img
+                src="/images/LOGO.webp"
+                alt="Sponsor Logo"
+                class="h-12 w-32 object-contain opacity-80 group-hover:opacity-100"
+                loading="lazy"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- CTA para nuevos sponsors -->
+    <div class="mt-20 text-center">
+      <p class="text-zinc-400 mb-6">¿Interesado en ser parte de Groom Camp?</p>
+      <a
+        href="#contacto"
+        class="inline-block bg-primery-yellow text-white font-bold py-3 px-8 rounded-lg hover:bg-yellow-500 transition-colors font-Bebas tracking-wide text-lg"
+      >
+        CONVIÉRTETE EN SPONSOR
+      </a>
+    </div>
+  </div>
+
+  <!-- Marcas de agua decorativas -->
+  <div
+    class="absolute -bottom-16 -right-16 w-64 h-64 bg-primery-yellow/5 rounded-full blur-3xl"
+  >
+  </div>
+  <div
+    class="absolute -top-24 -left-24 w-72 h-72 bg-primery-yellow/5 rounded-full blur-3xl"
+  >
+  </div>
+</section>
+
+<style>
+  /* Efecto de hover suave para los sponsors */
+  .group:hover img {
+    filter: drop-shadow(0 0 8px rgba(255, 204, 0, 0.3));
+  }
+
+  /* Separador animado para título */
+  .w-24.h-1.bg-primery-yellow {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .w-24.h-1.bg-primery-yellow::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+    animation: shine 2s infinite;
+  }
+
+  @keyframes shine {
+    to {
+      left: 100%;
+    }
+  }
+</style>
