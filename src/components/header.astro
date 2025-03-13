@@ -1,0 +1,251 @@
+---
+// Componente de Header usando Astro puro, sin JavaScript
+---
+
+<!-- filepath: /home/reypj/workspace/github/groomcamp/src/components/Header.astro -->
+<header class="bg-primary-black shadow-lg w-full py-2 z-[9999]">
+  <!-- Desktop Navigation - Visible solo en pantallas grandes -->
+  <div class="container mx-auto px-4 hidden lg:block">
+    <div class="flex items-center justify-between py-6">
+      <!-- Logo -->
+      <a href="/" class="z-20" aria-label="GroomCamp Inicio">
+        <img
+          src="/images/LOGO.webp"
+          alt="GroomCamp Logo"
+          width="180"
+          height="80"
+          class="h-20 w-auto object-contain"
+        />
+      </a>
+
+      <!-- Navegación para desktop -->
+      <nav class="flex items-center space-x-12">
+        <a
+          href="#inicio"
+          class="font-Bebas text-2xl text-white hover:text-primery-yellow transition-colors tracking-wide desktop-link"
+        >
+          INICIO
+        </a>
+        <a
+          href="#nuestro-equipo"
+          class="font-Bebas text-2xl text-white hover:text-primery-yellow transition-colors tracking-wide desktop-link"
+        >
+          NUESTRO EQUIPO
+        </a>
+        <a
+          href="#contacto"
+          class="font-Bebas text-2xl text-white hover:text-primery-yellow transition-colors tracking-wide desktop-link"
+        >
+          CONTACTO
+        </a>
+      </nav>
+
+      <!-- Iconos de usuario y carrito -->
+      <div class="flex items-center space-x-6">
+        <a
+          href="/usuario"
+          class="text-white hover:text-primery-yellow transition-colors"
+          aria-label="Perfil de usuario"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-7 w-7"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+            ></path>
+          </svg>
+        </a>
+        <a
+          href="/carrito"
+          class="text-white hover:text-primery-yellow transition-colors"
+          aria-label="Ver carrito de compras"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-7 w-7"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Header - Siempre visible en pantallas pequeñas -->
+  <div class="lg:hidden">
+    <!-- Barra superior con logo -->
+    <div class="flex justify-center py-4 px-4 shadow-md">
+      <a href="/" aria-label="GroomCamp Inicio">
+        <img
+          src="/images/LOGO.webp"
+          alt="GroomCamp Logo"
+          width="160"
+          height="60"
+          class="h-16 w-auto object-contain"
+        />
+      </a>
+    </div>
+
+    <!-- Menú móvil fijo en la parte inferior (estilo app móvil) -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-zinc-900 shadow-lg z-50">
+      <div class="grid grid-cols-3 gap-2 py-3 px-4">
+        <!-- Enlaces principales en iconos -->
+        <a
+          href="#inicio"
+          class="flex flex-col items-center text-white hover:text-primery-yellow"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 12l2-2m0 0l7-7 7 7m-14 0v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1v-10m-1-1h-12a1 1 0 00-1 1v10a1 1 0 001 1"
+            ></path>
+          </svg>
+          <span class="text-xs mt-1 font-Bebas">INICIO</span>
+        </a>
+
+        <a
+          href="#nuestro-equipo"
+          class="flex flex-col items-center text-white hover:text-primery-yellow"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+            ></path>
+          </svg>
+          <span class="text-xs mt-1 font-Bebas">EQUIPO</span>
+        </a>
+
+        <a
+          href="#contacto"
+          class="flex flex-col items-center text-white hover:text-primery-yellow"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+            ></path>
+          </svg>
+          <span class="text-xs mt-1 font-Bebas">CONTACTO</span>
+        </a>
+      </div>
+
+      <!-- Segunda fila con iconos extra de usuario y carrito -->
+      <div class="grid grid-cols-2 gap-2 py-2 px-4 border-t border-zinc-800">
+        <a
+          href="/usuario"
+          class="flex items-center justify-center text-white hover:text-primery-yellow py-2"
+          aria-label="Perfil de usuario"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 mr-2"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zm-4 7a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+            ></path>
+          </svg>
+          <span class="text-sm font-Bebas">Perfil</span>
+        </a>
+        <a
+          href="/carrito"
+          class="flex items-center justify-center text-white hover:text-primery-yellow py-2"
+          aria-label="Ver carrito de compras"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 mr-2"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+            ></path>
+          </svg>
+          <span class="text-sm font-Bebas">Carrito</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Espacio en blanco para compensar el menú fijo inferior -->
+    <div class="h-24"></div>
+  </div>
+</header>
+
+<style>
+  /* Efecto de subrayado para enlaces desktop */
+  .desktop-link::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ffcc00;
+    transition: width 0.3s;
+    margin-top: 2px;
+  }
+
+  .desktop-link:hover::after {
+    width: 100%;
+  }
+
+  /* Ajuste del padding del contenido principal para el menú fijo */
+  :global(body) {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+
+  /* Soporte para dispositivos con notch */
+  @supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .lg\:hidden nav {
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+  }
+</style>
